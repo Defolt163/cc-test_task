@@ -24,6 +24,24 @@ body{
 .lc-tabs__scroll-wrapper, .lc-tabs__underline-container{
     overflow-y: unset;
 }
+.lc-features__scrollable::-webkit-scrollbar{
+    width: 6px;
+    
+}
+.lc-features__scrollable::-webkit-scrollbar-track{
+    background-color: rgb(236, 236, 236);
+    border-radius: 5px
+}
+.lc-features__scrollable::-webkit-scrollbar-thumb{
+    background-color: rgb(166, 171, 179);
+    border-radius: 5px
+}
+.lc-text-block_size_s28{
+    line-height: 32px;
+}
+.lc-text-block_size_s42{
+    line-height: 95%;
+}
 /* Anim Elements */
 .lc-tabs__tab_active{
     border-color: #C2F23C !important;
@@ -143,6 +161,12 @@ h1{
     flex: none;
     white-space: normal;
 }
+#tabs .lc-section .lc-tabs__content-wrapper .lc-multi-background__section-container .lc-features__items .lc-text-block_size_s20{
+    line-height: 23px;
+}
+#tabs .lc-section .lc-tabs__content-wrapper .lc-multi-background__section-container .lc-features__items .lc-text-block_size_s24{
+    line-height: 120%;
+}
 #tabs .lc-section .lc-tabs__container-wrapper .lc-tabs__tab .lc-text-block .lc-styled-text__text{
     text-align: center;
     line-height: 32px;
@@ -150,6 +174,7 @@ h1{
 #tabs .lc-section .lc-tabs__container-wrapper .lc-tabs__gradient, .lc-tabs__arrow{
     display: none;
 }
+
 
 /* tabs-content-wrapper */
 .lc-features__base-wrapper {
@@ -169,7 +194,7 @@ h1{
 #tabs-content .lc-features__base-wrapper .lc-features__items .lc-features__item{
     background-color: #fff;
     width: calc(33.33% - 18px + 0.25rem);
-    padding: 40px 32px 18px;
+    padding: 40px 32px 40px;
     border-radius: 1rem;
 }
 #tabs-content .lc-features__base-wrapper .lc-features__items .lc-features__item .lc-features__description{
@@ -179,6 +204,9 @@ h1{
 /* Bingo cards */
 #cards .lc-features__base-wrapper{
     padding: 0;
+}
+#cards .lc-features__items .lc-features__item-wrap{
+    border-radius: 1rem;
 }
 #cards .lc-features__base-wrapper .lc-features__item{
     padding: 0;
@@ -195,6 +223,9 @@ h1{
     position: absolute;
     top: 0;
     padding: 0;
+}
+#cards .lc-features__base-wrapper .lc-features__items .lc-features__item .lc-text-block_size_s20{
+    line-height: 23px;
 }
 #cards .lc-features__base-wrapper .lc-features__item .lc-features__spacer-wrapper, .lc-features__image .lc-features__image-el{
     height: 100%;
@@ -221,29 +252,46 @@ h1{
     position: relative;
 }
 .lc-spoiler .lc-spoiler__items .lc-spoiler-item::before{
+    cursor: pointer;
     content: '';
     position: absolute;
-    top: 50%;
+    top: 55px;
     right: 0;
     background: url(icon-faq-arrow.svg) center center/cover no-repeat;
     width: 1.38rem;
     height: 0.88rem;
 }
+.lc-icon_fill-type_fill{
+    display: none;
+}
 .lc-spoiler .lc-spoiler__items .lc-spoiler-item_open.lc-spoiler-item::before{
+    cursor: pointer;
     content: '';
     position: absolute;
-    top: 50%;
+    top: 55px;
     right: 0;
     background: url(icon-faq-arrow.svg) center center/cover no-repeat;
     transform: rotate(180deg);
     width: 1.38rem;
     height: 0.88rem;
 }
+#faq-group #faq .lc-spoiler__items .lc-spoiler-item .lc-spoiler-item__header{
+    padding: 40px 0 13px;
+}
+#faq-group #faq .lc-spoiler__items .lc-spoiler-item.lc-spoiler-item_open .lc-spoiler-item__text{
+    padding: 13px 0 30.5px;
+}
 #faq-group .lc-styled-text__text{
     color: #fff;
 }
 #faq-group .lc-spoiler__items{
     color: #fff;
+}
+#faq-group .lc-offsets.lc-offsets__wrapper .lc-text-block_size_s24{
+    line-height: 120%;
+}
+#faq-group .lc-offsets.lc-offsets__wrapper .lc-text-block_size_s20{
+    line-height: 23px;
 }
 #faq-group .lc-group__content .lc-multi-background:last-child{
     display: none;
@@ -273,12 +321,15 @@ h1{
     }
     .lc-text-block_size_s28{
         font-size: 22px;
+        line-height: 26px;
     }
     .lc-text-block_size_s24{
         font-size: 20px;
+        line-height: 26px;
     }
     .lc-text-block_size_s20{
         font-size: 18px;
+        line-height: 21px !important;
     }
 
     .lc-header-lpc__fixed-wrapper{
@@ -379,6 +430,12 @@ h1{
     #faq .lc-offsets.lc-offsets__wrapper .lc-offsets{
         padding: 0 !important;
     }
+    .lc-spoiler .lc-spoiler__items .lc-spoiler-item_open.lc-spoiler-item::before{
+        top: 45px;
+    }
+    .lc-spoiler .lc-spoiler__items .lc-spoiler-item::before{
+        top: 45px;
+    }
     #faq .lc-offsets.lc-offsets__wrapper .lc-spoiler__items .lc-spoiler-item:first-child .lc-spoiler-item__header{
         padding: 0 0 .8em 0;
     }
@@ -421,7 +478,7 @@ h1{
         flex-direction: column;
     }
     #tabs .lc-section .lc-tabs__container-wrapper .lc-tabs__tab{
-        width: calc(100% - 20px);
+        width: calc(98% - 18px + 0.125rem);
         padding: 12% 2%;
     }
     #tabs .lc-section .lc-tabs__container-wrapper .lc-tabs__tab .lc-tabs__icon{
